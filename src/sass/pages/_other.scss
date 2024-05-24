@@ -1,0 +1,29 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.s-error {
+  min-height: 100vh;
+  padding: 120px 0 159px 0;
+
+
+  & .description {
+    margin-bottom: 40px;
+    @include fontSize(16, 24);
+    width: 75%;
+  }
+
+  & .form-control {
+    margin-bottom: 40px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 32px;
+    }
+
+    &__btn {
+      width: 100%;
+      margin-bottom: 20px;
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 32px;
+      }
+    }
+  }
+}

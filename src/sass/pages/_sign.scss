@@ -1,0 +1,32 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.s-sign {
+  margin-top: 110px;
+  padding: 120px 0 159px 0;
+
+  & .heading {
+    margin-bottom: 24px;
+  }
+
+  & .description {
+    margin-bottom: 40px;
+    @include fontSize(16, 24);
+    width: 75%;
+  }
+
+  & .form-control {
+    margin-bottom: 40px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 32px;
+    }
+
+    &__btn {
+      width: 100%;
+      margin-bottom: 20px;
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 32px;
+      }
+    }
+  }
+}
