@@ -1,0 +1,93 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.btn {
+  position: relative;
+  box-shadow: none;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 14px 30px;
+  min-width: 189px;
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  text-transform: uppercase;
+  @include transition(.3);
+
+  &:focus {
+    outline: none;
+  }
+
+  &-primary {
+    color: #1E3E7C;
+    background: $accentColor;
+
+    &:hover {
+
+    }
+  }
+
+  &-white {
+    color: #1E3E7C;
+    background-color: rgba(255, 255, 255, 1);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, .4);
+    }
+  }
+
+  &-transparent {
+    color: #fff;
+    border: 1px solid #fff;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, .4);
+    }
+  }
+
+
+  &-more {
+    color: $accentColor;
+    padding: 16px 83px 17px 24px;
+    box-shadow: 0px 4px 10px 0px #7852F759;
+    border: 1px solid $accentColor;
+    border-radius: 10px;
+    font-size: 16px;
+    @include transition(.5);
+    //
+
+    & span {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 7.5px;
+        right: 7.5px;
+        background: url("../img/ar-right.svg") no-repeat center;
+        height: 32px;
+        width: 32px;
+      }
+
+      &:after {
+        content: '';
+        background-color: $accentColor;
+        border-radius: 10px 8px 8px 10px;
+        height: 100%;
+        width: 51px;
+        position: absolute;
+        bottom: 0;
+        right: -1px;
+        @include transition(.5);
+        z-index: -1;
+      }
+
+    }
+
+    &:hover {
+
+    }
+  }
+}
+

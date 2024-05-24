@@ -1,0 +1,228 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.logo {
+  &__wrap {
+    width: 206px;
+  }
+
+}
+
+
+.header {
+  top: 20px;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  visibility: visible;
+  opacity: 1;
+
+  &__inner {
+    position: relative;
+    padding: 20px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    @media (max-width: $breakpoint-md) {
+      padding: 16px 30px 16px 13px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, .1);
+      z-index: -1;
+    }
+  }
+
+  &-main {
+    @media (max-width: $breakpoint-md) {
+      height: 100%;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+  }
+
+
+  & .btn {
+    &:nth-child(1) {
+      margin-right: 20px;
+    }
+  }
+
+  & .navbar {
+
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    & .main-navigation {
+      @media (max-width: $breakpoint-md) {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 170px;
+      }
+    }
+
+    .menu {
+      margin-right: 20px;
+      @media (max-width: $breakpoint-xl) {
+        margin-right: 20px;
+      }
+
+      @media (min-width: $breakpoint-md) {
+        height: 100%;
+      }
+      @media (max-width: $breakpoint-md) {
+        padding: 34px 7px 46px 7px;
+        text-align: left;
+        margin: 0;
+      }
+
+      &-item {
+        display: inline-block;
+        position: relative;
+        height: 100%;
+        @media (max-width: $breakpoint-md) {
+          padding: 0;
+          display: block;
+          height: auto;
+          margin: 0;
+        }
+
+        & + .menu-item {
+          margin-left: 40px;
+        }
+
+        & a {
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 1.2;
+          color: #fff;
+          transition: color ease-out .3s;
+          position: relative;
+        }
+
+        &:hover, &.current-menu-item {
+          & > a {
+            color: $accentColor;
+
+            &:after {
+              background-color: $accentColor;
+              width: 100%;
+              transition: all ease-out .5s;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: $breakpoint-md) {
+      height: calc(100vh - 83px);
+      background-color: $whiteColor;
+      position: fixed;
+      top: 83px;
+      transition: all 1.2s ease;
+      z-index: 2;
+      width: 100%;
+      right: -100%;
+      padding: 0 16px 65px 16px;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+
+      &.is-visible {
+        right: 0;
+        transition: all .5s ease;
+
+        & .menu-item {
+          a:before {
+            height: 0;
+          }
+        }
+
+        & .location, & .languages-navigation {
+          opacity: 1;
+          transition: all 2.5s ease;
+        }
+      }
+    }
+  }
+
+}
+
+.burger {
+  &__wrap {
+    width: 50px;
+    height: 50px;
+    border-radius: 0;
+    display: none;
+    @media (max-width: $breakpoint-md) {
+      display: flex;
+    }
+
+    &.active {
+
+      & .burger {
+        & span {
+          width: 100%;
+
+          &:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+          }
+
+          &:nth-child(2) {
+            opacity: 0;
+          }
+
+          &:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+
+  display: flex;
+  cursor: pointer;
+  width: 28px;
+  height: 18px;
+  justify-content: space-between;
+  flex-direction: column;
+  @include transition(.3);
+
+  & > span {
+
+    height: 2px;
+    background-color: $whiteColor;
+    border-radius: 10px;
+    transition: 0.5s;
+    z-index: 999;
+  }
+}
