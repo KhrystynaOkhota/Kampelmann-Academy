@@ -3,8 +3,14 @@
 
 .s-sign {
   padding: 230px 0 159px 0;
+  min-height: 100vh;
   @media (max-width: $breakpoint-md) {
     padding: 139px 0 59px 0;
+  }
+
+  & .blockquote__wrap {
+    min-height: 530px;
+    text-align: center;
   }
 
   & .decor {
