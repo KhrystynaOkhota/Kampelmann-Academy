@@ -71,20 +71,25 @@
 
 <main class="main ">
 
-    <section class="s-sign">
+    <section class="s-sign section">
+        <div class="decor__wrap">
+            <img src="assets/img/decor-banner.svg" alt="decor" class="decor">
+        </div>
         <div class="container">
-            <div class="row align-center">
+            <div class="row align-center overlap">
                 <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
                     <h1 class="heading text-l text-bold">Sign-in</h1>
                     <div class="description">Login using your username and password below</div>
                     <form>
                         <div class="sing__form">
                             <div class="form-control">
-                                <input type="text" name="name" value="" placeholder="Your Name"
+                                <label for="login" class="form-control__label">Login </label>
+                                <input type="text" name="name" value="" id="login" placeholder="Your Name"
                                        class="form-control__input">
                             </div>
                             <div class="form-control">
-                                <input type="email" name="email" value="" placeholder="Email"
+                                <label for="login" class="form-control__label">Password</label>
+                                <input type="password" name="password" value="" placeholder="*******"
                                        class="form-control__input">
                             </div>
                             <div class="form-control">
@@ -94,12 +99,7 @@
                     </form>
                 </div>
                 <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                    <div class="s-introduce__video --relative">
-                        <iframe src="https://www.youtube.com/embed/tdU63cTXRZw?rel=0&amp;fs=1&amp;wmode=transparent"
-                                width="400" height="300" allow="autoplay; fullscreen; encrypted-media"
-                                allowfullscreen="true" frameborder="0" scrolling="no"
-                                title="JoomlaWorks AllVideos Player"></iframe>
-                    </div>
+
                 </div>
             </div>
         </div>

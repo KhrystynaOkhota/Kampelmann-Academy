@@ -2,28 +2,69 @@
 @import "../abstracts/variables";
 
 .s-error {
-  min-height: 100vh;
-  padding: 120px 0 159px 0;
+  & .decor {
+    &__wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 110%;
+      @media (max-width: $breakpoint-md) {
+        width: 150%;
+      }
+    }
 
+    width: 100%;
 
-  & .description {
-    margin-bottom: 40px;
-    @include fontSize(16, 24);
-    width: 75%;
+    transform-origin: center;
+    animation: rotate 9s linear infinite;
   }
 
-  & .form-control {
+  &__inner {
+    height: 100vh;
+
+    &:after {
+      content: '';
+      background-color: #1364FF;
+      height: 500px;
+      width: 500px;
+      border-radius: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      filter: blur(65px);
+      @media (max-width: $breakpoint-md) {
+        height: 400px;
+        width: 400px;
+        filter: blur(45px);
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 380px;
+    @media (max-width: $breakpoint-md) {
+      max-width: 260px;
+    }
+    @media (max-width: 400px) {
+      max-width: 220px;
+    }
+    margin: 0 auto;
+  }
+
+  & .description {
     margin-bottom: 40px;
     @media (max-width: $breakpoint-md) {
       margin-bottom: 32px;
     }
+  }
 
-    &__btn {
-      width: 100%;
-      margin-bottom: 20px;
-      @media (max-width: $breakpoint-md) {
-        margin-bottom: 32px;
-      }
-    }
+  & .btn-primary {
+    width: 100%;
+    max-width: 180px;
+    background-color: #fff;
+    margin: 0 auto;
   }
 }

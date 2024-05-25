@@ -5,20 +5,20 @@
   margin-bottom: 20px;
 
   &-style {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Verdana', sans-serif;
     font-weight: normal;
 
     & p {
       font-weight: normal;
-      @include fontSize(14, 18);
-      line-height: 1.7;
+      @include fontSize(16, 18);
+      line-height: 1.21;
 
       & + p {
-        margin-top: 24px;
+        margin-top: 15px;
       }
 
       & + ul, & + ol {
-        margin-top: 20px;
+        margin-top: 15px;
       }
     }
 

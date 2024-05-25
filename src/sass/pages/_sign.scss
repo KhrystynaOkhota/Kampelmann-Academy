@@ -2,17 +2,48 @@
 @import "../abstracts/variables";
 
 .s-sign {
-  margin-top: 110px;
-  padding: 120px 0 159px 0;
+  padding: 230px 0 159px 0;
+  @media (max-width: $breakpoint-md) {
+    padding: 139px 0 59px 0;
+  }
+
+  & .decor {
+    &__wrap {
+      position: absolute;
+      top: 50%;
+      left: 75%;
+      transform: translateY(-50%);
+      width: 1500px;
+      height: 1500px;
+      @media (max-width: $breakpoint-md) {
+        width: 740px;
+        height: 740px;
+        left: 5%;
+      }
+    }
+
+    width: 100%;
+
+    transform-origin: center;
+    animation: rotate 9s linear infinite;
+  }
 
   & .heading {
     margin-bottom: 24px;
+    @media (max-width: $breakpoint-md) {
+      text-align: center;
+    }
   }
 
   & .description {
     margin-bottom: 40px;
     @include fontSize(16, 24);
     width: 75%;
+    @media (max-width: $breakpoint-md) {
+      margin: 0 auto 32px auto;
+      text-align: center;
+      width: 85%;
+    }
   }
 
   & .form-control {
