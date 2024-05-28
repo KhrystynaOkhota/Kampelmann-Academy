@@ -44,23 +44,29 @@
 
   &-xl {
     @include fontSize(32, 75);
-    line-height: 1.21;
+    line-height: 1.22;
   }
 
   &-l {
     @include fontSize(24, 47);
-    line-height: 1.21;
+    line-height: 1.221;
   }
 
   &-m {
     @include fontSize(20, 30);
-    line-height: 1.21;
+    line-height: 1.22;
   }
 
   &-s {
     @include fontSize(16, 18);
-    line-height: 1.21;
+    line-height: 1.22;
   }
+}
+.icon-open:before {
+  content: "\e900";
+}
+.icon-sign:before {
+  content: "\e901";
 }
 
 .heading {

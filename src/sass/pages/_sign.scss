@@ -6,11 +6,70 @@
   min-height: 100vh;
   @media (max-width: $breakpoint-md) {
     padding: 139px 0 59px 0;
+    position: relative;
+  }
+
+  .circle {
+    &-1 {
+      width: 200px;
+      object-fit: contain;
+      @media (max-width: $breakpoint-md) {
+        width: 132px;
+        position: absolute;
+        bottom: 19px;
+        height: 132px;
+        z-index: 56;
+      }
+    }
+
+    &-2 {
+      margin-top: auto;
+      margin-left: auto;
+      width: 140px;
+      object-fit: contain;
+      @media (max-width: $breakpoint-md) {
+        width: 130px;
+        position: absolute;
+        right: -50px;
+        z-index: 3;
+      }
+    }
+
+    &__wrap {
+      @media (min-width: $breakpoint-md) {
+        height: 350px;
+        width: 220px;
+        position: absolute;
+        left: 47%;
+        top: 11%;
+      }
+    }
   }
 
   & .blockquote__wrap {
     min-height: 530px;
     text-align: center;
+    overflow: hidden;
+
+    blockquote {
+      &:after {
+
+      }
+    }
+
+    img.decor-1 {
+      position: absolute;
+      top: 40px;
+      left: -150px;
+      width: 290px;
+    }
+
+    img.decor-2 {
+      position: absolute;
+      bottom: 40px;
+      right: -150px;
+      width: 290px;
+    }
   }
 
   & .decor {
@@ -24,7 +83,9 @@
       @media (max-width: $breakpoint-md) {
         width: 740px;
         height: 740px;
-        left: 5%;
+        left: 10%;
+        transform: none;
+        top: -10%;
       }
     }
 
@@ -35,6 +96,7 @@
   }
 
   & .heading {
+    font-family: Alice, serif;
     margin-bottom: 24px;
     @media (max-width: $breakpoint-md) {
       text-align: center;
@@ -42,6 +104,7 @@
   }
 
   & .description {
+    font-family: Alice, serif;
     margin-bottom: 40px;
     @include fontSize(16, 24);
     width: 75%;
@@ -49,6 +112,7 @@
       margin: 0 auto 32px auto;
       text-align: center;
       width: 85%;
+      max-width: 240px;
     }
   }
 

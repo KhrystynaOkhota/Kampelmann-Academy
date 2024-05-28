@@ -5,8 +5,9 @@
 .logo {
   &__wrap {
     width: 206px;
+    display: block;
     @media (max-width: 400px) {
-      width: 180px;
+
     }
   }
 
@@ -52,7 +53,7 @@
   }
 
   &-main {
-    @media (max-width: $breakpoint-md) {
+    @media (max-width: $breakpoint-lg) {
       height: 100%;
       -webkit-box-align: center;
       -webkit-align-items: center;
@@ -68,9 +69,35 @@
 
 
   & .btn {
+    @media (max-width: $breakpoint-xl) {
+      padding: 14px ;
+      min-width: 155px;
+    }
+    @media (max-width: $breakpoint-lg) {
+      width: 100%;
+    }
+
+    &__wrap {
+      @media (max-width: $breakpoint-lg) {
+        max-width: 340px;
+      }
+    }
+
     &:nth-child(1) {
       margin-right: 20px;
+      @media (max-width: $breakpoint-lg) {
+        margin: 0 0 16px 0;
+      }
     }
+  }
+
+  .logo {
+    &__wrap {
+      @media (max-width: $breakpoint-lg) {
+        width: 165px;
+      }
+    }
+
   }
 
   & .navbar {
@@ -89,7 +116,7 @@
     align-items: center;
 
     & .main-navigation {
-      @media (max-width: $breakpoint-md) {
+      @media (max-width: $breakpoint-lg) {
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -125,6 +152,12 @@
 
         & + .menu-item {
           margin-left: 40px;
+          @media (max-width: $breakpoint-xl) {
+            margin-left: 15px;
+          }
+          @media (max-width: $breakpoint-lg) {
+            margin: 32px 0 0 0;
+          }
         }
 
         & a {
@@ -150,16 +183,16 @@
       }
     }
 
-    @media (max-width: $breakpoint-md) {
-      height: calc(100vh - 83px);
-      background-color: $whiteColor;
+    @media (max-width: $breakpoint-lg) {
+
+      padding: 32px 15px;
       position: fixed;
       top: 83px;
       transition: all 1.2s ease;
       z-index: 2;
       width: 100%;
       right: -100%;
-      padding: 0 16px 65px 16px;
+
       overflow: auto;
       display: flex;
       flex-direction: column;
@@ -192,7 +225,7 @@
     height: 50px;
     border-radius: 0;
     display: none;
-    @media (max-width: $breakpoint-md) {
+    @media (max-width: $breakpoint-lg) {
       display: flex;
     }
 

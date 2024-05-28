@@ -9,18 +9,36 @@
   @media (max-width: $breakpoint-md) {
     height: auto;
   }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: -1;
+  }
 }
 
 
 blockquote {
-  font-family: 'Alice', serif;
-  padding: 40px 40px 10px 40px;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 40px;
   font-size: 24px;
   @media (max-width: $breakpoint-md) {
     padding: 32px 32px 10px 32px;
   }
   @media (max-width: 400px) {
     padding: 20px 20px 10px 20px;
+  }
+
+  & p, & footer {
+    font-family: 'Alice', serif;
   }
 
   & footer {
@@ -141,6 +159,7 @@ blockquote {
     border-radius: 5px;
     border: 1px solid #fff;
     padding-bottom: 62%;
+    height: 100%;
 
     & iframe {
       position: absolute;
@@ -153,29 +172,46 @@ blockquote {
   }
 
   & .decor {
-    position: absolute;
+    position: relative;
     bottom: 15px;
     left: -23px;
     max-width: 75%;
     @media (max-width: $breakpoint-md) {
+      position: absolute;
       -webkit-transform: scaleX(-1);
       transform: scaleX(-1);
       max-width: 200px;
       right: -15px;
       left: auto;
-      bottom: -11px;
+      bottom: 5px;
     }
     @media (max-width: 360px) {
-      max-width: 160px;
+    //  max-width: 160px;
     }
   }
 
   .blockquote__wrap {
-
-    padding-bottom: 150px;
     margin-bottom: 16px;
+    @media (min-width: $breakpoint-md) {
+      flex-direction: column;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
     @media (max-width: $breakpoint-md) {
+      padding-bottom: 150px;
+    }
 
+    blockquote {
+      max-width: 100%;
+
+      & p {
+        @include fontSize(17, 24);
+      }
+
+      footer {
+        @include fontSize(16, 18);
+      }
     }
   }
 
@@ -183,12 +219,43 @@ blockquote {
 }
 
 .s-quote {
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 64px;
+  }
+
   & .quote {
     border-radius: 5px;
     border: 1px solid #fff;
     padding: 10px;
     position: relative;
-    margin-bottom: 20px;
+
+
+    min-height: 300px;
+    padding: 16px;
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      &-wrap {
+        width: 100px;
+        height: 143px;
+        border-radius: 5px;
+        overflow: hidden;
+        @media (max-width: $breakpoint-md) {
+          width: 163px;
+        }
+        @media (max-width: 360px) {
+          margin: 0 auto 20px auto;
+        }
+      }
+    }
 
     &__author {
       padding: 10px 20px;
@@ -197,12 +264,19 @@ blockquote {
       font-family: 'Alice', serif;
       font-size: 18px;
       margin-top: 10px;
+      width: 100%;
     }
 
     &__text {
       font-family: 'Alice', serif;
       font-size: 16px;
       width: calc(100% - 120px);
+      @media (max-width: $breakpoint-md) {
+        width: calc(100% - 183px);
+      }
+      @media (max-width: 360px) {
+        width: 100%;
+      }
     }
 
     &:after {
@@ -215,10 +289,62 @@ blockquote {
       bottom: 0;
     }
   }
+
+  .swiper {
+    &-controls {
+      margin-top: 16px;
+    }
+  }
+}
+
+.s-accent {
+  overflow: hidden;
+
+  &__inner {
+    border-radius: 5px;
+    border: 1px solid #FFFFFF;
+    background: radial-gradient(50% 234.43% at 50% 50%, #1660ED 0%, #0D3787 100%);
+
+    padding: 105px 0 105px 0;
+    @media (max-width: $breakpoint-md) {
+      padding: 40.5px 0;
+    }
+  }
+
+  & .description {
+    @include fontSize(18, 30);
+    @media (max-width: 375px) {
+      font-size: 14px;
+    }
+  }
+
+  .decor {
+    position: absolute;
+    top: -70px;
+    width: 450px;
+    @media (max-width: $breakpoint-md) {
+      width: 103px;
+      top: 0;
+    }
+
+    &-1 {
+      right: calc(100% - 80px);
+      @media (max-width: $breakpoint-md) {
+        right: calc(100% - 20px);
+      }
+    }
+
+    &-2 {
+      left: calc(100% - 80px);
+      @media (max-width: $breakpoint-md) {
+        left: calc(100% - 20px);
+      }
+    }
+  }
 }
 
 .s-guidelines {
-  padding: 160px 0 90px 0;
+  padding: 160px 0 0 0;
   position: relative;
 
   &__inner {
@@ -235,6 +361,7 @@ blockquote {
       transform-origin: bottom;
 
     }
+
     &:nth-child(3) {
       position: absolute;
       top: 0;
@@ -302,6 +429,53 @@ blockquote {
       width: calc(50% - 55px);
       @media (max-width: $breakpoint-md) {
         width: 100%;
+        position: relative;
+      }
+    }
+
+    &__notification {
+
+      max-width: 400px;
+      margin: 40px auto 0 auto;
+      @media (max-width: $breakpoint-md) {
+        margin-top: 25px;
+      }
+    }
+
+    &__wrap {
+      padding-bottom: 90px;
+
+      img.decor-1 {
+        position: absolute;
+        left: -190px;
+        top: 0;
+        width: 300px;
+        @media (max-width: $breakpoint-md) {
+          width: 147px;
+          position: absolute;
+          left: auto;
+          right: -60px;
+          top: -93px;
+          z-index: 3;
+          transform: rotate(-90deg) scaleX(-1);
+        }
+      }
+
+      img.decor-2 {
+        position: absolute;
+        right: -190px;
+        top: 0;
+        width: 300px;
+        @media (max-width: $breakpoint-md) {
+          width: 147px;
+          transform: rotate(90deg);
+          top: auto;
+          bottom: -100px;
+          left: -60px;
+          pointer-events: none;
+          right: auto;
+          z-index: 3;
+        }
       }
     }
   }
@@ -442,8 +616,18 @@ blockquote {
 
     &__btn {
       margin-top: 40px;
+      display: flex;
+      padding-top: 10px;
+      padding-bottom: 10px;
       @media (max-width: $breakpoint-md) {
         margin-bottom: 32px;
+      }
+
+      & img {
+        width: 29px;
+        height: 29px;
+        object-fit: contain;
+        margin-right: 40px;
       }
     }
   }
@@ -492,8 +676,8 @@ blockquote {
 
   & .decor {
     position: absolute;
-    bottom: 80%;
-    right: 350px;
+    bottom: 85%;
+    right: -350px;
     transform-origin: center;
     animation: rotate 7s linear infinite;
     width: 739px;
@@ -501,14 +685,41 @@ blockquote {
     @media (max-width: $breakpoint-md) {
       width: 337px;
       height: 327px;
+      display: none;
     }
   }
 
-  &__item{
-    margin-bottom: 40px;
-    background-color: rgba(0,0,0,.4);
-    &:nth-child(odd){
+  &__item {
+
+
+    & + .s-basics__item {
+      margin-top: 40px;
+      @media (max-width: $breakpoint-md) {
+        margin-top: 32px;
+      }
+    }
+
+
+    &:nth-child(odd) {
       flex-direction: row-reverse;
+    }
+
+    &:last-child {
+      & .img-wrap {
+        @media (min-width: $breakpoint-md) {
+          margin-left: -40%;
+          width: 400px;
+        }
+        @media (max-width: $breakpoint-md) {
+          width: 196px;
+        }
+      }
+    }
+
+    & .img-wrap {
+      @media (max-width: $breakpoint-md) {
+        margin-top: 32px;
+      }
     }
   }
 }
@@ -607,18 +818,31 @@ blockquote {
   background: rgba(0, 0, 0, .19);
   padding: 139px 0 59px 0;
   @media (max-width: $breakpoint-md) {
-    padding: 19px 0;
+    padding: 122px 0 19px 0;
   }
 
   &__item {
-    @media (max-width: $breakpoint-md) {
-      margin-bottom: 48px;
+    & + .s-about__item {
+      @media (max-width: $breakpoint-md) {
+        margin-top: 48px;
+      }
     }
+
 
     &:nth-child(even) {
       flex-direction: row-reverse;
 
+      & .img {
+        &-wrap {
+          @media (max-width: $breakpoint-md) {
+            width: 230px;
+            margin-left: auto;
+          }
+        }
+      }
+    }
 
+    &:nth-child(1) {
       & .img {
         &-wrap {
           @media (max-width: $breakpoint-md) {
@@ -657,3 +881,14 @@ blockquote {
   }
 }
 
+.s-banner {
+  &__inner {
+    padding: 226px 0 113px 0;
+
+    & .heading {
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
