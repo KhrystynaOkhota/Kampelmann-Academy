@@ -347,6 +347,37 @@ blockquote {
   padding: 160px 0 0 0;
   position: relative;
 
+  .decor-circle {
+    position: absolute;
+    object-fit: contain;
+
+    &-1 {
+      width: 99px;
+      height: 99px;
+      left: 8%;
+      top: 100%;
+      @media (max-width: $breakpoint-md) {
+        width: 62px;
+        height: 62px;
+        left: -30px;
+        top: auto;
+        bottom: 16px;
+      }
+    }
+
+    &-2 {
+      top: -80px;
+      right: 0;
+      width: 180px;
+      height: 180px;
+      @media (max-width: $breakpoint-md) {
+        width: 90px;
+        height: 90px;
+        top:-134px;
+      }
+    }
+  }
+
   &__inner {
     @media (max-width: $breakpoint-md) {
       flex-direction: column-reverse;
