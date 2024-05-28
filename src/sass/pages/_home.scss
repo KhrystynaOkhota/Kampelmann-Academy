@@ -186,7 +186,7 @@ blockquote {
       bottom: 5px;
     }
     @media (max-width: 360px) {
-    //  max-width: 160px;
+      //  max-width: 160px;
     }
   }
 
@@ -882,12 +882,52 @@ blockquote {
 }
 
 .s-banner {
+  min-height: 100vh;
+
   &__inner {
     padding: 226px 0 113px 0;
 
     & .heading {
       @media (max-width: $breakpoint-md) {
         margin-bottom: 8px;
+      }
+    }
+
+    & .description {
+      @include fontSize(20, 32);
+    }
+  }
+}
+
+.decor-banner {
+  width: 100%;
+  transform-origin: center;
+  animation: rotate 9s linear infinite;
+
+  &__wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1600px;
+    @media (max-width: $breakpoint-md) {
+      width: 600px;
+    }
+
+    &:after {
+      content: '';
+      background-color: #1364FF;
+      height: 1500px;
+      width: 1500px;
+      border-radius: 100%;
+      position: absolute;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      filter: blur(65px);
+      @media (max-width: $breakpoint-md) {
+        height: 500px;
+        width: 500px;
       }
     }
   }
