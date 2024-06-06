@@ -230,8 +230,8 @@ blockquote {
     position: relative;
 
 
-    min-height: 300px;
-    padding: 16px;
+    min-height: 215px;
+
     flex-direction: column;
     display: flex;
     align-items: flex-start;
@@ -265,6 +265,7 @@ blockquote {
       font-size: 18px;
       margin-top: 10px;
       width: 100%;
+      z-index: 2;
     }
 
     &__text {
@@ -347,8 +348,9 @@ blockquote {
   padding: 300px 0 0 0;
   position: relative;
   @media (max-width: $breakpoint-md) {
-    padding: 170px 0 142px 0 ;
+    padding: 170px 0 142px 0;
   }
+
   & .decor {
     &-circle {
       position: absolute;
@@ -404,6 +406,7 @@ blockquote {
     border: 4px solid #38CFFF;
     border-radius: 100%;
     padding: 116px 0;
+
     &:nth-child(1) {
       z-index: 2;
       position: relative;
@@ -414,14 +417,14 @@ blockquote {
       top: 116px;
       transform: rotate(-30deg);
       /* transform-origin: bottom; */
-     // background-color: green;
+      // background-color: green;
     }
 
     &:nth-child(3) {
       position: absolute;
       top: 116px;
       transform: rotate(-150deg);
-     // background-color: yellow;
+      // background-color: yellow;
     }
 
     &__wrap {
@@ -549,6 +552,7 @@ blockquote {
     @media (max-width: $breakpoint-md) {
       text-align: center;
       margin-bottom: 33px;
+     
     }
   }
 
@@ -619,6 +623,7 @@ blockquote {
     margin-top: 44px;
     @media (max-width: $breakpoint-md) {
       margin-top: 63px;
+      position: relative;
     }
 
     & .heading {
@@ -703,7 +708,15 @@ blockquote {
       width: 900px;
       height: 900px;
       bottom: -20%;
-      left: -40%;
+      left: -450px;
+      @media (max-width: $breakpoint-md) {
+        width: 495px;
+        height: 511px;
+        bottom: auto;
+        top: -55px;
+        right: auto;
+        left: -200px;
+      }
     }
   }
 }
@@ -734,7 +747,8 @@ blockquote {
     @media (max-width: $breakpoint-md) {
       width: 337px;
       height: 327px;
-      display: none;
+      bottom: 90%;
+      right: -180px;
     }
   }
 
@@ -867,7 +881,7 @@ blockquote {
   background: rgba(0, 0, 0, .19);
   padding: 139px 0 59px 0;
   @media (max-width: $breakpoint-md) {
-    padding: 122px 0 19px 0;
+    padding: 0 0 19px 0;
   }
 
   &__item {
@@ -894,9 +908,21 @@ blockquote {
     &:nth-child(1) {
       & .img {
         &-wrap {
-          @media (max-width: $breakpoint-md) {
-            width: 230px;
+          width: 100%;
+          max-width: 440px;
+
+        }
+      }
+
+      @media (max-width: $breakpoint-md) {
+        flex-direction: column-reverse;
+        & .img {
+          &-wrap {
+            width: 100%;
+            max-width: 340px;
             margin-left: auto;
+            margin-top: -15px;
+            margin-bottom: -30px;
           }
         }
       }

@@ -198,6 +198,19 @@
 <script src="./assets/js/jquery-3.7.0.min.js"></script>
 <script src="assets/js/swiper-bundle.min.js"></script>
 <script src="assets/js/js_app.min.js"></script>
+<script>
+    function sum(x){
+        if(arguments.length == 2){
+            return arguments[0] + arguments[1];
+        } else {
+            return function (y) {
+                return x + y;
+            };
+        }
+    }
+    console.log(sum(2,3));
+    console.log(sum(2)(3));
+</script>
 
 </body>
 </html>
