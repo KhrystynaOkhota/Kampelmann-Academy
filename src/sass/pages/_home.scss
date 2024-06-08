@@ -232,6 +232,8 @@ blockquote {
 
     min-height: 215px;
 
+    max-width: 400px;
+    margin: 0 auto;
     flex-direction: column;
     display: flex;
     align-items: flex-start;
@@ -300,6 +302,7 @@ blockquote {
 
 .s-accent {
   overflow: hidden;
+  margin-bottom: 60px;
 
   &__inner {
     border-radius: 5px;
@@ -345,10 +348,10 @@ blockquote {
 }
 
 .s-guidelines {
-  padding: 300px 0 0 0;
+  padding: 188px 0 0 0;
   position: relative;
   @media (max-width: $breakpoint-md) {
-    padding: 170px 0 142px 0;
+    padding: 144px 0 142px 0;
   }
 
   & .decor {
@@ -365,7 +368,7 @@ blockquote {
         @media (max-width: $breakpoint-md) {
           width: 62px;
           height: 62px;
-          left: -30px;
+          left: -35px;
           top: auto;
           bottom: 16px;
         }
@@ -379,21 +382,47 @@ blockquote {
         @media (max-width: $breakpoint-md) {
           width: 90px;
           height: 90px;
-          top: -134px;
+          bottom: calc(100% + 44px);
+          top: auto;
         }
+      }
+    }
+
+    &-mobil {
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: calc(100% + 180px);
+      transform: translate(-50%, -50%);
+      max-width: 300%;
+      @media (min-width: 594px) {
+        display: none;
+      }
+      @media (max-width: 594px) {
+        display: block;
       }
     }
 
     &-bg {
       position: absolute;
-      height: 160%;
-      top: 50%;
+      height: 115%;
+      top: 0;
       left: 50%;
-      transform: translate(-50%, -50%);
+      max-width: 1000%;
+      transform: translateX(-50%);
+
+    }
+  }
+
+  &__top {
+    @media (min-width: $breakpoint-md) {
+      position: relative;
     }
   }
 
   &__inner {
+
     @media (max-width: $breakpoint-md) {
       flex-direction: column-reverse;
     }
@@ -487,7 +516,7 @@ blockquote {
 
     &__notification {
 
-      max-width: 400px;
+      max-width: 360px;
       margin: 40px auto 0 auto;
       @media (max-width: $breakpoint-md) {
         margin-top: 25px;
@@ -495,7 +524,10 @@ blockquote {
     }
 
     &__wrap {
-      padding-bottom: 90px;
+
+      @media (min-width: $breakpoint-md) {
+        padding-bottom: 90px;
+      }
 
       img.decor-1 {
         position: absolute;
@@ -552,7 +584,7 @@ blockquote {
     @media (max-width: $breakpoint-md) {
       text-align: center;
       margin-bottom: 33px;
-     
+
     }
   }
 
