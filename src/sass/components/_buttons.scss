@@ -48,6 +48,14 @@
     }
   }
 
+  &-cancel {
+    border: 2px solid #FFF61B;
+    color: #FFF61B;
+    display: none;
+    @media (max-width: $breakpoint-md) {
+      display: block;
+    }
+  }
 
   &-more {
     color: $accentColor;

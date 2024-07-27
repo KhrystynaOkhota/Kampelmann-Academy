@@ -162,7 +162,7 @@ jQuery(function ($) {
         _functions.openPopup('.popup-content[data-rel="' + $(this).data('rel') + '"]');
     });
 
-    $(document).on('click', '.popup-wrapper .btn-close, .popup-wrapper .layer-close, .popup-wrapper .btn-back', function (e) {
+    $(document).on('click', '.popup-wrapper .btn-close, .popup-wrapper .layer-close, .popup-wrapper .btn-cancel', function (e) {
         e.preventDefault();
         _functions.closePopup();
     });

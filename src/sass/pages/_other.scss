@@ -68,3 +68,133 @@
     margin: 0 auto;
   }
 }
+
+.s-thanks {
+  padding-bottom: 194px;
+  padding-top: 206px;
+  @media (max-width: $breakpoint-md) {
+    padding-top: 200px;
+    padding-bottom: 64px;
+  }
+
+  & .decor {
+    &__wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 110%;
+      @media (max-width: $breakpoint-md) {
+        width: 150%;
+      }
+    }
+
+    width: 100%;
+
+    transform-origin: center;
+    animation: rotate 9s linear infinite;
+  }
+
+  &__inner {
+    padding-bottom: 96px;
+    @media (max-width: $breakpoint-md) {
+      padding-bottom: 64px;
+    }
+
+    &:after {
+      content: '';
+      background-color: #1364FF;
+      height: 500px;
+      width: 500px;
+      border-radius: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      filter: blur(65px);
+      @media (max-width: $breakpoint-md) {
+        height: 400px;
+        width: 400px;
+        filter: blur(45px);
+      }
+    }
+  }
+
+  &__img {
+    width: 85%;
+    max-width: 414px;
+    margin: 0 auto 96px auto;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 32px;
+      max-width: 300px;
+    }
+  }
+
+  & .heading {
+    margin-bottom: 20px;
+  }
+
+  .transaction {
+    padding: 13px 30px 19px 13px;
+    background-color: #FFF61B;
+    border-radius: 5px;
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
+    @media (max-width: $breakpoint-md) {
+      position: relative;
+      right: 0;
+      bottom: 0;
+      margin-top: 16px;
+    }
+
+    &__icon {
+      margin-right: 10px;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+    }
+
+    &__code {
+      font-size: 18px;
+      color: #1E3E7C;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      width:calc(100% - 42px);
+    }
+
+  }
+
+  .order {
+    &__wrap {
+      background-color: #2C75FF;
+      padding: 32px;
+      border-radius: 10px;
+      @media (max-width: $breakpoint-md) {
+        padding: 32px 16px;
+      }
+    }
+
+    &__title {
+      font-size: 16px;
+      color: #FFF61B;
+      margin-bottom: 8px;
+    }
+
+    &__value {
+      font-size: 24px;
+    }
+
+    &__item {
+      & + .order__item {
+        margin-top: 32px;
+        @media (max-width: $breakpoint-md) {
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}
