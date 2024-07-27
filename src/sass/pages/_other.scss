@@ -80,10 +80,10 @@
   & .decor {
     &__wrap {
       position: absolute;
-      top: 50%;
+      top: 25%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 110%;
+      width: 80%;
       @media (max-width: $breakpoint-md) {
         width: 150%;
       }
